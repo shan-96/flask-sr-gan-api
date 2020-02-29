@@ -21,9 +21,9 @@ def handle_file_upload():
     # return redirect(url_for('view_loaded_image'))
 
 
-@app.route("/afterUpload")
-def view_loaded_image():
-    return render_template('viewFile.html')
+@app.route("/afterUpload", methods=['POST'])
+def delete_img_and_home():
+    return render_template('fileform.html')
 
 
 if __name__ == '__main__':

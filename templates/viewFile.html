@@ -5,5 +5,9 @@
 </head>
 <body>
     <img src="{{ url_for('static', filename=filename) }}" alt="SR Image"/>
+    <form action="/afterUpload" method="post">
+            Go back to home page:
+                <input type="submit" value="RETURN"/>
+    </form>
 </body>
 </html>
