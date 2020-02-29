@@ -11,12 +11,14 @@ def file_front_page():
 
 @app.route("/handleUpload", methods=['POST'])
 def handle_file_upload():
+    photo = ""
     if 'photo' in request.files:
         photo = request.files['photo']
         if photo.filename != '':
-            photo.save(os.path.join('./static/', 'image1.png'))
-    return render_template("viewFile.html")
-    #return redirect(url_for('view_loaded_image'))
+            filename = os.path.join('./static/', photo.filename)
+            photo.save(filename)
+    return render_template("viewFile.html", filename=photo.filename)
+    # return redirect(url_for('view_loaded_image'))
 
 
 @app.route("/afterUpload")
