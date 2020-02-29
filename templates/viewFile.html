@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Index</title>
+    <title>Your Super Resolution Image</title>
 </head>
 <body>
-    <img src="{{ url_for('static', filename=filename) }}" alt="SR Image"/>
-    <form action="/afterUpload" method="post">
+<div>
+    <h3>Your Super Resolution Image</h3>
+    <div>
+        <img src="{{ url_for('static', filename=filename) }}" alt="SR Image"/>
+    </div>
+    <div>
+        <form action="/afterUpload" method="post">
             Go back to home page:
-                <input type="submit" value="RETURN"/>
-    </form>
+            <input type="submit" value="HOME"/>
+        </form>
+    </div>
+</div>
 </body>
 </html>

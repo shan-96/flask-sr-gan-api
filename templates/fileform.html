@@ -1,11 +1,15 @@
 <html>
-    <head>
-        <title>SR GAN Example</title>
-    </head>
-    <body>
-        <form action="/handleUpload" method="post" enctype="multipart/form-data">
-            Choose the file: <input type="file" accept="image/*" name="photo"/><BR>
-                <input type="submit" value="Upload"/>
-        </form>
-    </body>
+<head>
+    <title>SR GAN Example</title>
+</head>
+<body>
+<h3>SR GAN Example</h3>
+<p>Upload a low resolution file that you need to convert to high resolution</p>
+<div>
+    <form action="/handleUpload" method="post" enctype="multipart/form-data">
+        Choose the file: <input type="file" accept="image/*" name="photo"/><BR>
+        <input type="submit" value="Upload"/>
+    </form>
+</div>
+</body>
 </html>
