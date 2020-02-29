@@ -1,4 +1,5 @@
 import os
+import glob
 from flask import Flask, request, render_template, url_for, redirect
 
 app = Flask(__name__)
@@ -23,6 +24,9 @@ def handle_file_upload():
 
 @app.route("/afterUpload", methods=['POST'])
 def delete_img_and_home():
+    files = glob.glob('./static/*')
+    for f in files:
+        os.remove(f)
     return render_template('fileform.html')
 
 
