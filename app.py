@@ -1,6 +1,7 @@
 import os
 import glob
 from flask import Flask, request, render_template, url_for, redirect
+import generator
 
 app = Flask(__name__)
 
@@ -18,7 +19,9 @@ def handle_file_upload():
         if photo.filename != '':
             filename = os.path.join('./static/', photo.filename)
             photo.save(filename)
-    return render_template("viewFile.html", filename=photo.filename)
+    html = generator.generateSR(filename)
+    return render_template("viewGAN.html", data=html)
+    # return render_template("viewFile.html", filename=photo.filename)
     # return redirect(url_for('view_loaded_image'))
 
 
