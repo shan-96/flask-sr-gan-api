@@ -3,15 +3,15 @@ import glob
 from flask import Flask, request, render_template, url_for, redirect
 import generator
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route("/")
+@application.route("/")
 def file_front_page():
     return render_template('fileform.html')
 
 
-@app.route("/handleUpload", methods=['POST'])
+@application.route("/handleUpload", methods=['POST'])
 def handle_file_upload():
     photo = ""
     if 'photo' in request.files:
@@ -25,7 +25,7 @@ def handle_file_upload():
     # return redirect(url_for('view_loaded_image'))
 
 
-@app.route("/afterUpload", methods=['POST'])
+@application.route("/afterUpload", methods=['POST'])
 def delete_img_and_home():
     files = glob.glob('./static/*')
     for f in files:
@@ -34,4 +34,4 @@ def delete_img_and_home():
 
 
 if __name__ == '__main__':
-    app.run()
+    application.run(host='0.0.0.0')
