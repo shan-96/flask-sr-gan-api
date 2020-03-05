@@ -2,3 +2,4 @@ venv1
 .git
 setup
 run
+__pycache__
