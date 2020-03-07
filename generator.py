@@ -1,9 +1,9 @@
+import keras
 import numpy as np
 import io
 import base64
 from PIL import Image
 import matplotlib.pyplot as plt
-import matplotlib.image as img
 from libs.srgan import SRGAN
 from libs.util import DataLoader
 
@@ -52,4 +52,5 @@ def generateSR(img_url):
     # return plt.show()
     encode64 = base64.b64encode(i.getvalue())
     # return '<img src="data:image/png;base64, {}">'.format(encode64.decode('utf-8'))
+    keras.backend.clear_session()
     return "data:image/png;base64, {}".format(encode64.decode('utf-8'))
