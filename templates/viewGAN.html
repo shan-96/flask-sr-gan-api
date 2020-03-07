@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-<div>
-    <h3>Your Super Resolution Image</h3>
-    <div>
-        <img src="{{ data }}" alt="SR Image"/>
-    </div>
-    <div>
-        <form action="/afterUpload" method="post">
-            Go back to home page:
-            <input type="submit" value="HOME"/>
-        </form>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Your Super Resolution Image</h1>
+      <div class="row center">
+        <img class="responsive-img" src="{{ data }}" alt="SR Image"/>
+      </div>
+      <br><br>
+   <div class="row">
+    <form action="/afterUpload" method="post">
+	  <div class="center">
+        <input type="submit" id="download-button" class="btn-large waves-effect waves-light orange" value="Go Back To Home Page" />
+      </div>
+  </form>
+  </div>
     </div>
 </div>
 </body>

@@ -10,13 +10,13 @@
     <div class="container">
       <h1 class="header center orange-text">Your Super Resolution Image</h1>
       <div class="row center">
-        <img src="{{ url_for('static', filename=filename) }}" alt="SR Image"/>
+        <img class="responsive-img" src="{{ url_for('static', filename=filename) }}" alt="SR Image"/>
       </div>
       <br><br>
    <div class="row">
     <form action="/afterUpload" method="post">
 	  <div class="center">
-        <input id="download-button" class="btn-large waves-effect waves-light orange" value="Go Back To Home Page" />
+        <input type="submit" id="download-button" class="btn-large waves-effect waves-light orange" value="Go Back To Home Page" />
       </div>
   </form>
   </div>
