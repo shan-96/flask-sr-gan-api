@@ -2,18 +2,24 @@
 <html>
 <head>
     <title>Your Super Resolution Image</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-<div>
-    <h3>Your Super Resolution Image</h3>
-    <div>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center orange-text">Your Super Resolution Image</h1>
+      <div class="row center">
         <img src="{{ url_for('static', filename=filename) }}" alt="SR Image"/>
-    </div>
-    <div>
-        <form action="/afterUpload" method="post">
-            Go back to home page:
-            <input type="submit" value="HOME"/>
-        </form>
+      </div>
+      <br><br>
+   <div class="row">
+    <form action="/afterUpload" method="post">
+	  <div class="center">
+        <input id="download-button" class="btn-large waves-effect waves-light orange" value="Go Back To Home Page" />
+      </div>
+  </form>
+  </div>
     </div>
 </div>
 </body>
